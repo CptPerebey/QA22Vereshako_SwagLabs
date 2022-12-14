@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class CheckOutInformationTest extends BaseTest {
     @Test
-    public void CheckOutSendKeys(){
+    public void checkOutSendKeys(){
         String testItemName = "Sauce Labs Backpack";
         String expectedItemPrice = "$29.99";
         String expectedItemDescription = "carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.";
