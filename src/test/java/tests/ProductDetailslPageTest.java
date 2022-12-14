@@ -14,6 +14,7 @@ public class ProductDetailslPageTest extends BaseTest{
         loginPage.clickLoginButton();
         productsPage.openItem(itemName);
         Assert.assertEquals(productDetailsPage.getItemPrice(),itemPrice);
+        Assert.assertEquals(productDetailsPage.getItemDesc(),itemDesc);
 
     }
 
