@@ -33,6 +33,11 @@ public abstract class BaseTest {
 
         loginPage = new LoginPage(driver);
         productsPage = new ProductsPage(driver);
+        shoppingCartPage = new ShoppingCartPage(driver);
+        checkOutInformationPage = new CheckOutInformationPage(driver);
+        checkoutOverview = new CheckoutOverview(driver);
+
+
     }
     @BeforeMethod
     public void negative() {
