@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class CheckOutInformationTest extends BaseTest {
-    @Test
+    @Test(groups = "Smoke",description = "Тест на добавление товара и переход на следующую страницу")
     public void checkOutSendKeys(){
         String testItemName = "Sauce Labs Backpack";
         String expectedItemPrice = "$29.99";

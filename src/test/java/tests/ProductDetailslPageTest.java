@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class ProductDetailslPageTest extends BaseTest{
-    @Test
+    @Test(groups = "Regression", description = "Тест на проверку цены и описания товара на странице товара")
     public void productDetailsTestOne(){
         String itemName = "Sauce Labs Backpack";
         String itemPrice = "$29.99";

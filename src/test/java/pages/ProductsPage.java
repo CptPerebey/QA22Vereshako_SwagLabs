@@ -3,6 +3,11 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+
+import java.util.List;
 
 public class ProductsPage extends BasePage {
     private final static By SHOPPING_CART_BUTTON = By.cssSelector(".shopping_cart_link");
@@ -11,6 +16,8 @@ public class ProductsPage extends BasePage {
     private final static By ITEM_PRICE_TEXT = By.cssSelector(".inventory_item_price");
     private final static By ITEM_DESRRIPTION_DESC = By.cssSelector(".inventory_item_desc");
     private final static By ITEM_NAME_LINK = By.cssSelector(".inventory_item_name");
+
+    private final static By ITEM_FILTER_BUTTON = By.cssSelector(".product_sort_container");
 
     public ProductsPage(WebDriver driver) {
         super(driver);
@@ -48,6 +55,12 @@ public class ProductsPage extends BasePage {
 
     private By getItemContainerByName(String itemName) {
         return By.xpath(String.format(ITEM_CONTAINER_LOCATOR, itemName));
+    }
+
+    public void filterList (){
+        Select select = new Select(driver.findElement(ITEM_FILTER_BUTTON));
+        List<WebElement> allOptions = select.getOptions();
+        allOptions.get(1).click();
     }
 }
 

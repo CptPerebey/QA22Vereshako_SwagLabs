@@ -4,14 +4,19 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.bouncycastle.asn1.cms.Time;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.IRetryAnalyzer;
+import org.testng.ITestListener;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.util.TimeUtils;
 import pages.*;
 
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
-
+@Listeners(TestListener.class)
 public abstract class BaseTest {
     protected WebDriver driver;
     protected LoginPage loginPage;
@@ -22,9 +27,8 @@ public abstract class BaseTest {
     protected CheckoutOverview checkoutOverview;
 
 
-
     @BeforeClass
-    public void setUp(){
+    public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -39,12 +43,14 @@ public abstract class BaseTest {
 
 
     }
+
     @BeforeMethod
     public void negative() {
         driver.get("https://www.saucedemo.com/");
     }
+
     @AfterClass(alwaysRun = true)
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
     }
 
