@@ -12,7 +12,7 @@ import java.util.List;
 public class TestsProductsPage extends BaseTest {
 
 
-    @Test(groups = "Regression", description = "Тест проверку перехода на главную страницу после регистрации")
+    @Test(groups = "Regression", description = "Тест проверку перехода на главную страницу после регистрации",retryAnalyzer = RetryAnalyzer.class)
     public void positiveAddItem() {
       String testItemName = "Sauce Labs Backpack";
       String testItemPrice = "$29.99";

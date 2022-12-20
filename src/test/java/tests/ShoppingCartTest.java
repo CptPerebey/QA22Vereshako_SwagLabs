@@ -1,11 +1,12 @@
 package tests;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import pages.BasePage;
 
 public class ShoppingCartTest extends BaseTest {
-    @Test(groups = "Smoke", description = "Тест на добавление товара в корзину")
+    @Test(groups = "Smoke", description = "Тест на добавление товара в корзину",retryAnalyzer = RetryAnalyzer.class)
     public void positiveShoppingCartTest() {
         String testItemName = "Sauce Labs Backpack";
         String expectedItemPrice = "$29.99";

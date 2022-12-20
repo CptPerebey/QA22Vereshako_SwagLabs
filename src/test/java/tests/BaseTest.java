@@ -5,15 +5,14 @@ import org.bouncycastle.asn1.cms.Time;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.IRetryAnalyzer;
+import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
+import org.testng.annotations.*;
 import org.testng.util.TimeUtils;
 import pages.*;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 @Listeners(TestListener.class)
@@ -25,6 +24,8 @@ public abstract class BaseTest {
     protected ShoppingCartPage shoppingCartPage;
     protected CheckOutInformationPage checkOutInformationPage;
     protected CheckoutOverview checkoutOverview;
+    protected RetryAnalyzer retryAnalyzer;
+
 
 
     @BeforeClass

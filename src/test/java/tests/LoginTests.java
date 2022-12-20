@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import pages.LoginPage;
 
 public class LoginTests extends BaseTest {
-    @Test(groups = "Smoke", description = "Тест регистрации на сайте")
+    @Test(groups = "Smoke", description = "Тест регистрации на сайте",retryAnalyzer = RetryAnalyzer.class)
     public void positiveLoginTest() {
         loginPage.setUsername("standard_user");
         loginPage.setPassword("secret_sauce");
